@@ -12,3 +12,7 @@ Packages and versions used in the course
 
 
 * react 0.13
+
+Naming conventions
+* camelCase.js used here
+* could also use *.jsx or something else

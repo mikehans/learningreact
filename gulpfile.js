@@ -17,6 +17,7 @@ var config = {
 			'node_modules/bootstrap/dist/css/bootstrap.css',
 			'node_modules/bootstrap/dist/css/bootstrap-theme.css'
 		],
+		images: './src/images/*.png',
 		dist: './dist',
 		mainJs: './src/main.js'
 	}
@@ -29,7 +30,7 @@ gulp.task('connect', function(){
 		port: config.port,
 		base: config.devBaseUrl,
 		livereload: true
-	})
+	});
 });
 
 gulp.task('open', ['connect'], function(){
@@ -56,12 +57,18 @@ gulp.task('js', function(){
 gulp.task('css', function(){
 	gulp.src(config.paths.css)
 		.pipe(concat('bundle.css'))
-		.pipe(gulp.dest(config.paths.dist + '/css'))
-})
+		.pipe(gulp.dest(config.paths.dist + '/css'));
+});
+
+gulp.task('images', function(){
+	gulp.src(config.paths.images)
+		.pipe(gulp.dest(config.paths.dist + '/images'))
+		.pipe(connect.reload());
+});
 
 gulp.task('watch', function(){
 	gulp.watch(config.paths.html, ['html']);
-	gulp.watch(config.paths.html, ['js']);
+	gulp.watch(config.paths.js, ['js']);
 });
 
-gulp.task('default', ['html', 'js', 'css', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'images', 'open', 'watch']);
