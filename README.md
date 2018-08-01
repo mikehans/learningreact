@@ -1,4 +1,4 @@
-# React and Flux into (Pluralsight)
+# React and Flux Intro (Pluralsight)
 
 ## Packages and versions used in the course
 * gulp 3.9.0
