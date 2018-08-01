@@ -4,22 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate-mock-data": "node ./src/build/generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch fakeapi/db.json --port 3001"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chalk": "^2.4.1",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^2.2.0",
-    "gulp-open": "^1.0.0"
+    "gulp-open": "^1.0.0",
+    "json-schema-faker": "^0.5.0-rc15",
+    "json-server": "^0.14.0"
   },
   "dependencies": {
     "bootstrap": "^3.3.0",
     "browserify": "^11.0.1",
     "flux": "^2.0.3",
     "jquery": "^2.1.4",
+    "lodash": "^4.17.10",
     "react": "^0.13.3",
     "react-router": "^0.13.3",
     "reactify": "^1.1.1",
