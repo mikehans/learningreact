@@ -45,3 +45,8 @@ Plan:
     * randexp.js
 1. Serve data via API
     * JSON Server
+
+## Future goals after this course
+* migrate to React 16
+* migrate to npm / webpack
+* new project - create pricing component with Flexbox and React, feeding from an API
